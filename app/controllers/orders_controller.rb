@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
 
   def show
-    @order = Order.find(params[:id])
+    # @order = Order.find(params[:id])
+    # raise @order.inspect
   end
 
   def create
@@ -24,7 +25,7 @@ class OrdersController < ApplicationController
   def empty_cart!
     # empty hash means no products in cart :)
     #create instance var here to call in show when the cart is empty, to display message?
-    raise @order
+    # raise @order
     update_cart({})
   end
 

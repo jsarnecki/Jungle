@@ -1,10 +1,22 @@
 <section class="cart-show">
 
+<% if enhanced_cart.length == 0 %> 
+
+<h1>Looks like your cart is empty</h1>
+
+<% if false %>
+THIS IS A COMMENT
+<button type="button" action="/" class="btn btn-secondary btn-lg">Large button</button>
+<% end %>
+
+<a class="btn btn-secondary btn-lg" href="/">Home</a>
+
+
+<% else %>
+
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-
-  <% if false %> 
 
   <div class="panel panel-default items">
     <table class="table table-bordered">
@@ -50,10 +62,6 @@
       <% end %>
     </div>
   </div>
-
-  <% else %>
-
-  <h1>Oh hai</h1>
 
   <% end %>
 
