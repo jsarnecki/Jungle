@@ -23,6 +23,8 @@ class OrdersController < ApplicationController
 
   def empty_cart!
     # empty hash means no products in cart :)
+    #create instance var here to call in show when the cart is empty, to display message?
+    raise @order
     update_cart({})
   end
 
