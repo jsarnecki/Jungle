@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'products#index'
+  root to: 'products#index' #products=controller index=action
 
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
