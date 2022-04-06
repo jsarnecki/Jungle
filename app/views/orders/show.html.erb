@@ -4,6 +4,47 @@
     <h1>Order <%= @order.id %></h1>
   </header>
 
+  <% if false %>
+  [{:product=>#<Product id: 11, name: "Electric Chair", description: "Plaid fanny pack art party listicle. Fixie ugh fle...", image: "furniture2.jpg", price_cents: 98765, quantity: 2, created_at: "2022-04-06 18:00:42", updated_at: "2022-04-06 18:00:42", category_id: 3>, :quantity=>1}, {:product=>#<Product id: 12, name: "Red Bookshelf", description: "Vinegar heirloom pork belly. Vinyl vegan lumbersex...", image: "furniture3.jpg", price_cents: 248375, quantity: 23, created_at: "2022-04-06 18:00:43", updated_at: "2022-04-06 18:00:43", category_id: 3>, :quantity=>1}]
+
+  <% end %>
+
+  <% puts @order.line_items.inspect %>
+
+  <div class="panel panel-default items">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">Product</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @order.line_items.each do |item| %>
+          <%  %>
+          <%= render 'post_order', product: item.product, quantity: item[:quantity].to_i, price: item.product.price %>
+        <% end %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="4">
+            TOTAL:
+          </th>
+          <th>
+            $<%= total_price / 100.00 %>
+          </th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+
+  <div>
+    <%= @order.email %>
+  </div>
+  
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
   </div>
