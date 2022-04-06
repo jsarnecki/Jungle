@@ -6,8 +6,10 @@ class OrdersController < ApplicationController
   end
 
   def total_price
-    @order.line_items.map {|entry| entry[:product].price_cents * entry[:quantity]}.sum
+    @order.line_items.map {|entry| entry.product.price_cents * entry[:quantity]}.sum
+
   end
+  helper_method :total_price
 
   def create
     charge = perform_stripe_charge
