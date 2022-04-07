@@ -12,6 +12,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def signed_in_title
+    @signed_in_title = "Signed in as #{current_user.name}"
+  end
+
   private
 
   def user_params

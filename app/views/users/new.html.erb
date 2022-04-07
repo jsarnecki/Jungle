@@ -2,10 +2,44 @@
 
 <%= form_for :user, url: '/users' do |f| %>
 
+  <% if false %>
   Name: <%= f.text_field :name %>
   Email: <%= f.text_field :email %>
   Password: <%= f.password_field :password %>
   Password Confirmation: <%= f.password_field :password_confirmation %>
   <%= f.submit "Submit" %>
+<% end %>
+
+
+  <table class="table ">
+  <thead>
+    <tr>
+      <th colspan="2"></th>
+      <th>Information</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Name:<td>
+      <td><%= f.text_field :name %><td>
+    </tr>
+    <tr>
+    <td>Email<td>
+    <td>Form<td>
+  </tr>
+  <tr>
+  <td><td>
+  <td><td>
+</tr>
+<tr>
+<td><td>
+<td><td>
+</tr>
+<tr>
+<td><td>
+<td><td>
+</tr>
+  </tbody>
+</table>
 
 <% end %>
