@@ -1,7 +1,10 @@
 class CartsController < ApplicationController
 
-  def show
+  before_filter :authorize
+  #add to any controller that you want to secure and force user to login
+  #not sure if I want it for carts, but will be good to test here anyway
 
+  def show
   end
 
   def add_item
