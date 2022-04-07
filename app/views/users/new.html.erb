@@ -15,31 +15,35 @@
   <thead>
     <tr>
       <th colspan="2"></th>
-      <th>Information</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Name:<td>
+      <td>First Name:<td>
       <td><%= f.text_field :name %><td>
     </tr>
     <tr>
-    <td>Email<td>
-    <td>Form<td>
-  </tr>
-  <tr>
-  <td><td>
-  <td><td>
-</tr>
-<tr>
-<td><td>
-<td><td>
-</tr>
-<tr>
-<td><td>
-<td><td>
-</tr>
+      <td>Last Name:<td>
+      <td><td>
+    </tr>
+    <tr>
+      <td>Email:<td>
+      <td><%= f.text_field :email %><td>
+    </tr>
+    <tr>
+      <td>Password:<td>
+      <td><%= f.password_field :password %><td>
+    </tr>
+    <tr>
+      <td>Confirm Password:<td>
+      <td><%= f.password_field :password_confirmation %><td>
+    </tr>
   </tbody>
 </table>
+    
+<div class="signup_submit_btn">
+  <%= f.submit "Submit" %>
+</div>
 
 <% end %>
