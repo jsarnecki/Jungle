@@ -10,6 +10,8 @@ RSpec.describe Product, type: :model do
     end
 
     it 'validates that the product has a :price' do
+      @category = Category.create(:name => 'test')
+      @product = Product.create(:category_id => @category.id)
 
     end
 
