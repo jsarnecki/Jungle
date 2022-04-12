@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe "Validations" do
 
-    xit "must be created with password and password_confirm" do
+    it "must be created with password and password_confirm" do
       @user = User.create(
         :first_name => "test", 
         :last_name => "123", 
@@ -11,11 +11,24 @@ RSpec.describe User, type: :model do
         :password => "12345",
         :password_confirmation => "12345")
 
-      expect(@user.password == @user.password_confirmation).to be_true
+      expect(@user.valid?).to be_truthy
 
     end
 
-    it "must be created with a unique email" do
+    it "returns invalid when password and confirmation does not match" do
+
+      @user = User.create(
+        :first_name => "test", 
+        :last_name => "123", 
+        :email => "test@123", 
+        :password => "12345",
+        :password_confirmation => "")
+
+      expect(@user.valid?).to be_falsey
+
+    end
+
+    xit "must be created with a unique email" do
       @user = User.new(
         :first_name => "test", 
         :last_name => "123", 
@@ -28,13 +41,16 @@ RSpec.describe User, type: :model do
       expect(email_confirm).to be_nil
     end
 
-    it "must include a first and last name" do
+    xit "must include a first and last name" do
       @user = User.create(:first_name => "Josh", :last_name => "Man", :email => "test@test")
-      expect(@user.first_name).to be_present
-      expect(@user.last_name).to be_present
+
+      expect(@user.valid?).to be_truthy
+      expect(@user.valid?).to be_truthy
     end
 
-    it "must have a password with a minimum length of 5" do
+    #test functionality > value
+
+    xit "must have a password with a minimum length of 5" do
       @user = User.create(
         :first_name => "Test", 
         :last_name => "123", 
@@ -48,6 +64,28 @@ RSpec.describe User, type: :model do
   end
 
   describe ".authenticate_with_credentials" do
+    
+    before do
+      @user = User.create(
+        :first_name => "Test", 
+        :last_name => "123", 
+        :email => "test@123", 
+        :password => "12345",
+        :password_confirmation => "12345")
+    end
+    
+    it "should still login users if there is white space around their email" do
+      email = "   test@123  "
+      expect(@user.authenticate_with_credentials(email, "12345")).to be_truthy
+    end
+
+    it "should still login users if their email spelling is correct, but case is wrong" do
+
+      email = "Test@123"
+      expect(@user.authenticate_with_credentials(email, "12345")).to be_truthy
+
+    end
+
 
   end
 end
