@@ -21,12 +21,14 @@ scenario "They can click 'Add to Cart' for a product on the home page and have t
   # ACT
   visit root_path
 
-  # puts page.html
+  puts page.html
 
   #find add to cart button, click
   first('.actions').click_on('Add')
-
   #checkout the nav cart icon to see if it has 1 item
+  find('div#navbar').find('ul.navbar-right').find('a.dropdown-toggle').click
+
+
   
   # save_screenshot
 
