@@ -21,15 +21,14 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
     # ACT
     visit root_path
 
-    #find product detail button
+    #find product detail button and click
     first('.actions').click_link('Details')
-    #click on button
-    
-    #confirm on product's page
-    
-    # save_screenshot
 
-    # expect(page).to 
+    #confirm on product's page
+    expect(page).to have_css('.products-show')
+    
+    save_screenshot
+
   end
 
 end
