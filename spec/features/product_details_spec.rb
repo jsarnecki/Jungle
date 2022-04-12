@@ -21,7 +21,11 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
     # ACT
     visit root_path
 
-    # # DEBUG / VERIFY
+    #find product detail button
+    first('.actions').click_link('Details')
+    #click on button
+    
+    #confirm on product's page
     
     # save_screenshot
 
