@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
 
-  before_filter :authorize
+  #before_filter :authorize # Uncomment if you wish to force users to login before adding to cart
+  
   #add to any controller that you want to secure and force user to login
   #not sure if I want it for carts, but will be good to test here anyway
 

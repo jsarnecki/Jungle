@@ -18,18 +18,15 @@ RSpec.feature "AddToCarts", type: :feature, js: true do
   end
 
 scenario "They can click 'Add to Cart' for a product on the home page and have their cart increase by 1" do
-  # ACT
+
   visit root_path
 
-  puts page.html
+  expect(page).to have_content('My Cart (0)')
 
-  #find add to cart button, click
-  first('.actions').click_on('Add')
-  #checkout the nav cart icon to see if it has 1 item
-  find('div#navbar').find('ul.navbar-right').find('a.dropdown-toggle').click
+  first('footer.actions').click_on('Add')
 
-
-  
+  expect(page).to have_content('My Cart (1)')
+ 
   # save_screenshot
 
 end
