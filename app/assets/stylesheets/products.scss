@@ -13,7 +13,7 @@ main section.categories-show {
       // so that footer within can be positioned absolutely
       position:  relative;
 
-      border:        1px solid #ccc;
+      border:        3px solid #1f1f1f;
       border-radius: 5px;
       padding:       15px;
       padding-bottom: 80px;
@@ -31,7 +31,7 @@ main section.categories-show {
         position: absolute;
         bottom: 0;
         left:   0;
-        background-color: #EEE;
+        background-color: rgb(30, 28, 28);
         padding: 15px;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
@@ -45,7 +45,7 @@ main section.categories-show {
         top: 0;
         right: 0;
         padding: 10px;
-        background-color: #eee;
+        background-color: rgb(30, 28, 28);
         border-top-right-radius: 4px;
         border-bottom-left-radius: 20px;
         font-size: 0.8em;
@@ -56,7 +56,7 @@ main section.categories-show {
         top: 0;
         left: 0;
         padding: 10px;
-        color: white;
+        color: rgb(30, 28, 28);
         font-weight: bold;
         opacity: 40%;
         background-color: red;
@@ -67,7 +67,7 @@ main section.categories-show {
 
       &:hover {
 
-        border-color: #999;
+        border-color: rgb(149, 149, 149);
 
         footer {
           opacity: 1.0;
@@ -89,4 +89,12 @@ main section.products-show {
 
 .signup_submit_btn {
   margin-left: 1%;
+}
+
+.panel, .well {
+  background-color: rgb(20, 19, 19);
+}
+
+input {
+  color: #1f1f1f;
 }
